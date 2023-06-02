@@ -3,8 +3,7 @@ const core = require('@actions/core');
 try {
   const issueTitle = process.env.GITHUB_EVENT_ISSUE_TITLE;
   const issueBody = process.env.GITHUB_EVENT_ISSUE_BODY;
-  console.log(`Issue Description: ${issueBody}`);
-  const issueLabels = process.env.GITHUB_EVENT_ISSUE_LABELS;
+  const issueNumber = process.env.GITHUB_EVENT_ISSUE_NUMBER;
 //  const issueAssignee = process.env.GITHUB_EVENT_ISSUE_ASSIGNEE;
 
 //   // Validate inputs
@@ -24,6 +23,7 @@ try {
   // Print validated inputs
   console.log(`Issue Title: ${issueTitle}`);
   console.log(`Issue Description: ${issueBody}`);
+  console.log(`Issue Description: ${issueNumber}`);
  // console.log(`Issue Labels: ${issueLabels.join(', ')}`);
   //console.log(`Issue Assignees: ${issueAssignees.join(', ')}`);
 
