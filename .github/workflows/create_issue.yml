@@ -1,0 +1,17 @@
+name: Create Issue
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Repository
+        uses: actions/checkout@v2
+
+      - name: Validate Issue Inputs
+        run: node .github/workflows/validate_issue.js
