@@ -22,10 +22,11 @@ jobs:
         run: npm install @actions/core
 
       - name: Validate Issue Inputs
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          issue-body: ${{ github.event.issue.number }}
-          issue-title: ${{ github.event.issue.number }}
-          issue-labels: ${{ github.event.issue.number }}
+        env:
+          GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GITHUB_EVENT_ISSUE_BODY: ${{ github.event.issue.body }}
+          GITHUB_EVENT_ISSUE_TITLE: ${{ github.event.issue.number }}
+          GITHUB_EVENT_ISSUE_LABELS: ${{ github.event.issue.number }}
+          GITHUB_EVENT_ISSUE_ASSIGNEE: ${{ github.event.issue.assignee }}
         run: node src/validate-input.js
           
