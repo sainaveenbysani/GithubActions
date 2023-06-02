@@ -5,7 +5,7 @@ try {
   const issueBody = process.env.GITHUB_EVENT_ISSUE_BODY;
   console.log(`Issue Description: ${issueBody}`);
   const issueLabels = process.env.GITHUB_EVENT_ISSUE_LABELS;
-  const issueAssignee = process.env.GITHUB_EVENT_ISSUE_ASSIGNEE;
+//  const issueAssignee = process.env.GITHUB_EVENT_ISSUE_ASSIGNEE;
 
 //   // Validate inputs
 // //   if (!issueTitle || issueTitle.trim() === '') {
