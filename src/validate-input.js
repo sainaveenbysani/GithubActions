@@ -5,7 +5,7 @@ try {
   const issueBody = process.env.GITHUB_EVENT_ISSUE_BODY;
   console.log(`Issue Description: ${issueBody}`);
   const issueLabels = process.env.GITHUB_EVENT_ISSUE_LABELS;
-  const issueAssignees = process.env.GITHUB_EVENT_ISSUE_ASSIGNEES;
+  const issueAssignee = process.env.GITHUB_EVENT_ISSUE_ASSIGNEE;
 
 //   // Validate inputs
 // //   if (!issueTitle || issueTitle.trim() === '') {
@@ -24,8 +24,8 @@ try {
   // Print validated inputs
   console.log(`Issue Title: ${issueTitle}`);
   console.log(`Issue Description: ${issueBody}`);
-  console.log(`Issue Labels: ${issueLabels.join(', ')}`);
-  console.log(`Issue Assignees: ${issueAssignees.join(', ')}`);
+ // console.log(`Issue Labels: ${issueLabels.join(', ')}`);
+  //console.log(`Issue Assignees: ${issueAssignees.join(', ')}`);
 
   // Additional validation or processing logic can be added here
 
