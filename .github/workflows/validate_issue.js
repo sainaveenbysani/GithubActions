@@ -24,7 +24,7 @@ try {
   console.log(`Issue Title: ${issueTitle}`);
   console.log(`Issue Description: ${issueBody}`);
   console.log(`Issue Labels: ${issueLabels.join(', ')}`);
-  console.log(`Issue Assignees: ${issueAssignees.join(', ')}`);
+  //console.log(`Issue Assignees: ${issueAssignees.join(', ')}`);
 
   // Additional validation or processing logic can be added here
 
@@ -32,7 +32,7 @@ try {
   core.setOutput('validatedTitle', issueTitle);
   core.setOutput('validatedDescription', issueBody);
   core.setOutput('validatedLabels', issueLabels.join(','));
-  core.setOutput('validatedAssignees', issueAssignees.join(','));
+ // core.setOutput('validatedAssignees', issueAssignees.join(','));
 
 } catch (error) {
   core.setFailed(error.message);
