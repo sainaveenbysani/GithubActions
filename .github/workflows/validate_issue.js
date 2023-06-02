@@ -1,15 +1,16 @@
 const core = require('@actions/core');
 
 try {
-  const issueTitle = process.env.GITHUB_EVENT_ISSUE_TITLE;
+  //const issueTitle = process.env.GITHUB_EVENT_ISSUE_TITLE;
   const issueBody = process.env.GITHUB_EVENT_ISSUE_BODY;
+  console.log(`Issue Description: ${issueBody}`);
  // const issueLabels = process.env.GITHUB_EVENT_ISSUE_LABELS.split(',');
   //const issueAssignees = process.env.GITHUB_EVENT_ISSUE_ASSIGNEES.split(',');
 
   // Validate inputs
-  if (!issueTitle || issueTitle.trim() === '') {
-    throw new Error('Issue title is required.');
-  }
+//   if (!issueTitle || issueTitle.trim() === '') {
+//     throw new Error('Issue title is required.');
+//   }
 
   if (!issueBody || issueBody.trim() === '') {
     throw new Error('Issue description is required.');
@@ -21,7 +22,7 @@ try {
 
 
   // Print validated inputs
-  console.log(`Issue Title: ${issueTitle}`);
+  //console.log(`Issue Title: ${issueTitle}`);
   console.log(`Issue Description: ${issueBody}`);
 //  console.log(`Issue Labels: ${issueLabels.join(', ')}`);
   //console.log(`Issue Assignees: ${issueAssignees.join(', ')}`);
@@ -29,7 +30,7 @@ try {
   // Additional validation or processing logic can be added here
 
   // Set outputs for use in subsequent steps
-  core.setOutput('validatedTitle', issueTitle);
+  //core.setOutput('validatedTitle', issueTitle);
   core.setOutput('validatedDescription', issueBody);
   //core.setOutput('validatedLabels', issueLabels.join(','));
  // core.setOutput('validatedAssignees', issueAssignees.join(','));
