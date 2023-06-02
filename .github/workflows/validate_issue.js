@@ -3,7 +3,7 @@ const core = require('@actions/core');
 try {
   const issueTitle = process.env.GITHUB_EVENT_ISSUE_TITLE;
   const issueBody = process.env.GITHUB_EVENT_ISSUE_BODY;
-  const issueLabels = process.env.GITHUB_EVENT_ISSUE_LABELS.split(',');
+ // const issueLabels = process.env.GITHUB_EVENT_ISSUE_LABELS.split(',');
   //const issueAssignees = process.env.GITHUB_EVENT_ISSUE_ASSIGNEES.split(',');
 
   // Validate inputs
@@ -15,15 +15,15 @@ try {
     throw new Error('Issue description is required.');
   }
 
-  if (issueLabels.length === 0) {
-    throw new Error('At least one label must be assigned to the issue.');
-  }
+//   if (issueLabels.length === 0) {
+//     throw new Error('At least one label must be assigned to the issue.');
+//   }
 
 
   // Print validated inputs
   console.log(`Issue Title: ${issueTitle}`);
   console.log(`Issue Description: ${issueBody}`);
-  console.log(`Issue Labels: ${issueLabels.join(', ')}`);
+//  console.log(`Issue Labels: ${issueLabels.join(', ')}`);
   //console.log(`Issue Assignees: ${issueAssignees.join(', ')}`);
 
   // Additional validation or processing logic can be added here
@@ -31,7 +31,7 @@ try {
   // Set outputs for use in subsequent steps
   core.setOutput('validatedTitle', issueTitle);
   core.setOutput('validatedDescription', issueBody);
-  core.setOutput('validatedLabels', issueLabels.join(','));
+  //core.setOutput('validatedLabels', issueLabels.join(','));
  // core.setOutput('validatedAssignees', issueAssignees.join(','));
 
 } catch (error) {
