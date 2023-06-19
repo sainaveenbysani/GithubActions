@@ -1,9 +1,10 @@
 name: Create Issue
-
 on:
   issues:
     types:
       - opened
+      - edited
+      - reopened
 
 jobs:
   create_issue:
@@ -22,8 +23,8 @@ jobs:
         run: npm install @actions/core
 
       - name: Create Issue
-        uses: sainaveenbysani/Testing/src/action.yml
         with:
           data: ${{ toJson(inputs) }}
+          path: ../src/action.yml
 
           
