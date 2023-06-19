@@ -25,6 +25,6 @@ jobs:
       - name: Create Issue
         with:
           data: ${{ toJson(inputs) }}
-          path: ../src/action.yml
+          path: ./src/action.yml
 
           
