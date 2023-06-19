@@ -23,7 +23,9 @@ jobs:
         run: npm install @actions/core
         
       - name: Echo inputs
-        run: ./src/action.yml
+        run: |
+             ./src/action.yml
+             echo "Inputs : ${{ toJson(inputs) }}"
 
       - name: Create Issue
         uses: ./src/action.yml
