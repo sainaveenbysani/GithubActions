@@ -22,7 +22,7 @@ jobs:
         run: npm install @actions/core
 
       - name: Create Issue
-        uses: src/action.yaml
+        uses: sainaveenbysani/Testing/src/action.yaml@v1
         with:
           data: ${{ toJson(inputs) }}
 
