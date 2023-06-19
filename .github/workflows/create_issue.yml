@@ -21,10 +21,9 @@ jobs:
       - name: Install Dependencies
         run: npm install @actions/core
 
-      - name: Validate Issue Inputs
-        env:
-          GITHUB_EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
-          GITHUB_EVENT_ISSUE_BODY: ${{ github.event.issue.body }}
-          GITHUB_EVENT_ISSUE_TITLE: ${{ github.event.issue.title }}
-        run: node src/validate-input.js
+      - name: Create Issue
+        uses: ./src/action.yaml
+        with:
+          data: ${{ toJson(inputs) }}
+
           
