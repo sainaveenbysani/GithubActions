@@ -1,0 +1,8 @@
+inputs:
+  data:
+    description: 'JSON payload containing StudentName, RollNo, and IdList'
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'index.js'
